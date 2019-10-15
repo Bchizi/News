@@ -1,5 +1,6 @@
 class News:
-    #News class to define new News objects
+
+    #News class to define new News objects 
 
     def __init__(self,id,name,description,url,category,language,country):
         self.id =id

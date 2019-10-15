@@ -1,13 +1,13 @@
 from app import app
 import urllib.request,json
 from .models import news
-
-News = news.News
+ 
+News = news.News 
 #Getting api key
 api_key = app.config['NEWS_API_KEY'] 
 
 #getting the news base url
-base_url = app.config['NEWS_API_BASE_URL']
+base_url = app.config['SOURCE_API_BASE_URL']
 
 def get_sources():
     '''
@@ -54,6 +54,11 @@ Function that proceses the sources results and transforms them to a list of obje
     return sources_results 
 
 
+def get_news():
+
+    
+
+    pass
 
 
 
