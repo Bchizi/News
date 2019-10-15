@@ -4,6 +4,7 @@ import json
 from .models import news, articles
 
 News = news.News
+Articals = articles.Articals
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 
@@ -61,7 +62,7 @@ def get_news(id):
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = news_base_url
+    get_news_url = news_base_url.format(id)
 
     with urllib.request.urlopen(get_news_url)as url:
         get_news_data = url.read()
@@ -86,10 +87,10 @@ def process_news_results(news_list):
         sources _results: A list of sources objects
     '''
     news_results = []
-    for news_results in news_list['articles']:
+    for article in news_list: 
         news_results.append(
             Articals(
-                article.get('id')
+                article['source'].get('id'),
                 article.get('author'),
                 article.get('title'),
                 article.get('description'),
@@ -100,5 +101,4 @@ def process_news_results(news_list):
             )
         )
 
-
-    
+    return news_results
