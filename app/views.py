@@ -20,6 +20,8 @@ def home():
 def news(id):
     news = get_news(id)
     print(news)
-    return render_template('news.html')
+
+    title= 'Articles'
+    return render_template('news.html',title = title, news=news)
 
 

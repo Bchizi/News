@@ -6,8 +6,8 @@
 <ul>
     {% for source in sources %}
     <li> {{source.id}} </li>
-    <h1> {{source.name}} </h1>
-    <p> {{source.description}} </p>
+    <h1><a href="/news/{{source.id}}">{{source.name}}</a></h1>
+    <p>{{source.description}} </p>
     <a href=""> {{source.url}} </a>
 
     {% endfor %}

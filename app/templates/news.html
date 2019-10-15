@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
-
 {% block content %}
+<h1>NEWS MOTO</h1>
+<ul>
+    {% for a_news in news %}
+        <li> {{a_news.id}} </li>
+        <h2> {{a_news.title}} </h2>
+        <h3> {{a_news.author}}</h3>
+        <p>{{a_news.description}}</p>
+        <a href="">{{news.url}}</a>
+        <img src= {{a_news.urlToImage}}  alt="">
+    {%endfor%}
+
+
+
+</ul>
+
+
+
+
+
+
 {% endblock %}
 
