@@ -4,7 +4,7 @@ class Config:
     '''
     SOURCE_API_BASE_URL = 'https://newsapi.org/v2/sources?apiKey=5084802430fe42a38ffbccfb5ecfdb0b'
 
-    NEWS_API_BASE_URL = 'https://newsapi.org/v2/everything?q=bitcoin&apiKey=5084802430fe42a38ffbccfb5ecfdb0b'
+    NEWS_API_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey=5084802430fe42a38ffbccfb5ecfdb0b'
 
 class ProdConfig(Config):
     '''
