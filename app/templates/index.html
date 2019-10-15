@@ -16,7 +16,17 @@
     <h3>News Sources</h3>
     <ul>
         {% for source in sources %}
+        <li> {{source.id}} </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for source in sources %}
         <li> {{source.name}} </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for source in sources %}
+        <li> {{source.description}} </li>
         {% endfor %}
     </ul>
 </body>

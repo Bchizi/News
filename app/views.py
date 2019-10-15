@@ -11,9 +11,10 @@ def home():
     '''
     #getting sources
     sources = get_sources()
+    print(sources)
 
     title = 'BestNews'
-    return render_template('index.html', title=title ,sources = sources )
+    return render_template('index.html', title = title ,sources = sources )
 
 @app.route('/News')
 def news():

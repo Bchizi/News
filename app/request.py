@@ -25,16 +25,16 @@ def get_sources():
             sources_results_list = get_sources_response['sources']
             sources_results = process_results(sources_results_list) 
 
-            return sources_results
+    return sources_results
 
 def process_results(sources_list):
     '''
-Function that proceses the movie results the sourcces results and transforms them to a list of objects
+Function that proceses the sources results and transforms them to a list of objects
     Args:
         sources_list: A list of dictionaries that contain Sources details
 
     Returns:
-        sources _results: A list of movie objects
+        sources _results: A list of sources objects
     '''
     sources_results = []
     for source_item in sources_list:
@@ -45,6 +45,9 @@ Function that proceses the movie results the sourcces results and transforms the
         category = source_item.get('category')
         language = source_item.get('language')
         country = source_item.get('country')
+
+        new_object=News(id,name,description,url,category,language,country)
+        sources_results.append(new_object)
 
        
 
