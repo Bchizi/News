@@ -1,34 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    {%if title %}
-    <title> {{title}} </title>
-    {% else %}
-    <title>welcome to the best news Website</title>
-    {% endif %}
+<!--sources section-->
+<h3>News Sources</h3>
+<ul>
+    {% for source in sources %}
+    <li> {{source.id}} </li>
+    <h1> {{source.name}} </h1>
+    <p> {{source.description}} </p>
+    <a href="  "> {{source.url}} </a>
 
-</head>
+    {% endfor %}
+</ul>
 
-<body>
-    <!--sources section-->
-    <h3>News Sources</h3>
-    <ul>
-        {% for source in sources %}
-        <li> {{source.id}} </li>
-        {% endfor %}
-    </ul>
-    <ul>
-        {% for source in sources %}
-        <li> {{source.name}} </li>
-        {% endfor %}
-    </ul>
-    <ul>
-        {% for source in sources %}
-        <li> {{source.description}} </li>
-        {% endfor %}
-    </ul>
-</body>
-
-</html>
+{% endblock %}
