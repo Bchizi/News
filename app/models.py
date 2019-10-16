@@ -1,4 +1,3 @@
-
 class News:
 
     #News class to define new News objects 

@@ -8,9 +8,9 @@ class Config:
 
     NEWS_API_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey=5084802430fe42a38ffbccfb5ecfdb0b'
 
-    NEWS_API_KEY = os.environ.get(NEWS_API_KEY)
+    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
 
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    
 
 class ProdConfig(Config):
     '''
