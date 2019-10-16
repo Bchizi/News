@@ -22,7 +22,7 @@ def news(id):
     news = get_news(id)
     print(news)
 
-    title= 'Articles'
+    title= 'Articales'
     return render_template('news.html',title = title, news=news)
 
 @main.route('/search/<artical_name>')

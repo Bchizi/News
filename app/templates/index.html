@@ -1,32 +1,33 @@
+
+
 {% extends 'base.html' %}
 
 <!-- Styles block -->
 
 {% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 
 {% block content %}
 
-<div class="container">
-    <form>
-        <input type="text" name="article_query" placeholder="Search for a Articles" class="form-control">
-        <input type="submit"  value="Submit" class="btn btn-default">
-    </form>
+{% for source in sources %}
 
-</div>
+    <div class="col-md-4">
 
-<!--sources section-->
-<h3>News Sources</h3>
-<ul>
-    {% for source in sources %}
-    <li> {{source.id}} </li>
-    <h1><a href="/news/{{source.id}}">{{source.name}}</a></h1>
-    <p>{{source.description}} </p>
-    <a href=""> {{source.url}} </a>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <a href="/news/{{source.id}}">{{source.name}}</a>
+            </div>
+            <div class="panel-body">
+                <p>{{source.description}}</p>
+                <a href="/news/{{source.id}}" class="btn btn-info btn-sm">{{source.name}}</a>
+            </div>
+        </div>
 
-    {% endfor %}
-</ul>
+    </div>
+
+
+{% endfor %}
 
 {% endblock %}
